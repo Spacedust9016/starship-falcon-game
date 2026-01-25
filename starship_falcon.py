@@ -2,9 +2,6 @@
 """
 🚀 Starship Falcon - Terminal Space Adventure
 A beautiful ASCII rocket animation game for your terminal.
-
-Author: Parth Chaudhari
-License: MIT
 """
 
 import os

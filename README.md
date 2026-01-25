@@ -4,7 +4,6 @@ A beautiful ASCII rocket launch animation for your terminal, written in Python.
 
 ![Python](https://img.shields.io/badge/Python-3.6+-blue.svg)
 ![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey.svg)
-![License](https://img.shields.io/badge/License-MIT-green.svg)
 
 ## ✨ Features
 
@@ -96,15 +95,6 @@ Contributions are welcome! Feel free to:
 - 💡 Suggest new features
 - 🔧 Submit pull requests
 
-## 📝 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 👨‍💻 Author
-
-**Parth Chaudhari**
-- GitHub: [@parthchaudhari90](https://github.com/parthchaudhari90)
-
 ---
 
 <p align="center">
@@ -112,3 +102,4 @@ This project is open source and available under the [MIT License](LICENSE).
   <br>
   ⭐ Star this repo if you found it cool!
 </p>
+

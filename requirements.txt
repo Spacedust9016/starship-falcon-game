@@ -1,5 +1,14 @@
-# 🚀 Starship Falcon Dependencies
-# No external dependencies required - uses only Python standard library!
-# 
-# Optional enhancements (uncomment if needed):
-# colorama>=0.4.6  # For Windows color support (not needed for modern terminals)
+# 🚀 Starship Falcon 3D Dependencies
+# Core game engine
+pygame>=2.5.2
+pyglet>=2.0.11
+
+# 3D graphics and math
+numpy>=1.26.3
+PyOpenGL>=3.1.7
+
+# Audio
+pygame-mixer>=1.1.0
+
+# Utilities
+pillow>=10.2.0
