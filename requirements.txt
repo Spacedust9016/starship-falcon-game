@@ -1,0 +1,5 @@
+# 🚀 Starship Falcon Dependencies
+# No external dependencies required - uses only Python standard library!
+# 
+# Optional enhancements (uncomment if needed):
+# colorama>=0.4.6  # For Windows color support (not needed for modern terminals)
