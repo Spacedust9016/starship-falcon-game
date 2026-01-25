@@ -2,9 +2,6 @@
 """
 🚀 Starship Falcon 3D - Space Valley Shooter
 A modern 3D space shooter game with realistic physics and stunning visuals.
-
-Author: Parth Chaudhari
-License: MIT
 """
 
 import pygame
@@ -361,15 +358,15 @@ class Particle(GameObject):
             self.alive = False
     
     def draw(self, screen: pygame.Surface):
-        # Fade out effect
-        alpha = int(255 * (1 - self.time_alive / self.lifetime))
-        color = (self.color[0], self.color[1], self.color[2], alpha)
-        pygame.draw.rect(
-            screen,
-            color,
-            (self.position.x - self.width // 2, self.position.y - self.height // 2,
-             self.width, self.height)
-        )
+        # Fade out effect using a surface with alpha
+        alpha = max(0, min(255, int(255 * (1 - self.time_alive / self.lifetime))))
+        w, h = int(self.width), int(self.height)
+        if w <= 0 or h <= 0:
+            return
+        particle_surface = pygame.Surface((w, h), pygame.SRCALPHA)
+        color = (int(self.color[0]), int(self.color[1]), int(self.color[2]), alpha)
+        pygame.draw.rect(particle_surface, color, (0, 0, w, h))
+        screen.blit(particle_surface, (int(self.position.x - w // 2), int(self.position.y - h // 2)))
 
 
 class Background:
@@ -441,7 +438,7 @@ class Game:
     """Main game class"""
     def __init__(self):
         pygame.init()
-        pygame.display.set_caption("🚀 Starship Falcon 3D")
+        pygame.display.set_caption("Starship Falcon 3D")
         self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
         self.clock = pygame.time.Clock()
         self.state = STATE_MENU
@@ -668,7 +665,7 @@ class Game:
     
     def draw_menu(self):
         """Draw main menu"""
-        title = self.large_font.render("🚀 STARSHIP FALCON 3D", True, YELLOW)
+        title = self.large_font.render("STARSHIP FALCON 3D", True, YELLOW)
         title_rect = title.get_rect(center=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 3))
         self.screen.blit(title, title_rect)
         
@@ -752,13 +749,15 @@ class Game:
 
 
 if __name__ == "__main__":
-    print("🚀 Starship Falcon 3D - Space Valley Shooter")
+    import traceback
+    print("Starship Falcon 3D - Space Valley Shooter")
     print("Controls: W/A/S/D or Arrow Keys to move, SPACE to shoot, ESC to quit")
     
     try:
         game = Game()
         game.run()
     except Exception as e:
-        print(f"Error: {e}")
+        traceback.print_exc()
         pygame.quit()
         sys.exit(1)
+
