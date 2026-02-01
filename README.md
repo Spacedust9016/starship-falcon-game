@@ -156,7 +156,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## Credits
 
-- **Author**: Parth Chaudhari
+- **Author**: spacedust9016
 - **Engine**: Pygame + OpenGL
 - **Inspiration**: Classic space shooter games
 
